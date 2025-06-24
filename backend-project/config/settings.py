@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+AUTH_USER_MODEL = 'account.CustomUser'
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'menu',
+    'account',
 ]
 
 MIDDLEWARE = [
@@ -121,6 +122,10 @@ USE_TZ = True
 import os
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]   
+
 MEDIA_URL ='/media/'
 MEDIA_ROOT= os.path.join(BASE_DIR , 'media/')
 
@@ -128,3 +133,4 @@ MEDIA_ROOT= os.path.join(BASE_DIR , 'media/')
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
